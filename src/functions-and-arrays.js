@@ -242,7 +242,27 @@ function greatestProduct(arr) {
   return product
 }
 
-
+function greatestProductOfDiagonals(arr) {
+  let product = 0
+  let tempProduct = 0
+  for (let j = 0; j < 16; j++) { //It goes through each block of 4 numbers HORIZONTALLY LEFT TO RIGHT
+    for (let i = 0; i < 16; i++) {
+      tempProduct = arr[j][i] * arr[j+1][i+1] * arr[j+2][i+2] * arr[j+3][i+3]
+      if (tempProduct > product) {
+        product = tempProduct
+      }
+    }
+  }
+  for (let j = 16; j < 0; j--) { //It goes through each block of 4 numbers HORIZONTALLY RIGHT TO LEFT
+    for (let i = 16; i < 0; i--) {
+      tempProduct = arr[i][j] * arr[i-1][j-1] * arr[i-2][j-2] * arr[i-3][j-3]
+      if (tempProduct > product) {
+        product = tempProduct
+      }
+    }
+  }
+  return product
+}
 
 
 // The following is required to make unit tests work.
