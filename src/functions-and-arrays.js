@@ -223,7 +223,7 @@ const matrix = [
 function greatestProduct(arr) {
   let product = 0
   let tempProduct = 0
-  for (let j = 0; j < 16; j++) { //It goes through each block of 4 numbers HORIZONTALLY
+  for (let j = 0; j < 20; j++) { //It goes through each block of 4 numbers HORIZONTALLY
     for (let i = 0; i < 16; i++) {
       tempProduct = arr[j][i] * arr[j][i+1] * arr[j][i+2] * arr[j][i+3]
       if (tempProduct > product) {
@@ -231,7 +231,7 @@ function greatestProduct(arr) {
       }
     }
   }
-  for (let j = 0; j < 16; j++) { //It goes through each block of 4 numbers VERTICALLY
+  for (let j = 0; j < 20; j++) { //It goes through each block of 4 numbers VERTICALLY
     for (let i = 0; i < 16; i++) {
       tempProduct = arr[i][j] * arr[i+1][j] * arr[i+2][j] * arr[i+3][j]
       if (tempProduct > product) {
